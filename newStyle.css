@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: red;
+  overflow: hidden;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.gameContainer {
+  position: relative;
+  background: url(images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+#scoreCount {
+  background-color: #fff;
+  border: 2px solid black;
+
+  width: 20%;
+  margin: 1vw;
+  padding: 1vw;
+  line-height: normal;
+  font-size: small;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameOver {
+  visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 20vw;
+  width: 30vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: +1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.year {
+  position: absolute;
+  right: 0px;
+  background-color: #fff;
+  border: 2px solid black;
+  width: 30%;
+  margin: 1vw;
+  padding: 1vw;
+  line-height: normal;
+  font-size: small;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vdo {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.student {
+  background-image: url(images/student-preview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 8vw;
+  height: 8vw;
+  position: absolute;
+  bottom: 0px;
+  left: 10vw;
+
+  transition: left 0.7s linear, right 0.7s linear;
+}
+
+.obstacle {
+  background-image: url(images/assignment.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 8vw;
+  height: 8vw;
+  position: absolute;
+  left: 55vw;
+  bottom: 0px;
+}
+
+.animateStudentup {
+  animation: upar .8s linear;
+}
+
+@keyframes upar {
+  0% {
+    bottom: 0px;
+  }
+
+  50% {
+    bottom: 30vw;
+  }
+
+  100% {
+    bottom: 0px;
+  }
+}
+
+.obstacleAni {
+  animation: obstacleAni 6s linear infinite;
+}
+
+@keyframes obstacleAni {
+  0% {
+    left: 100vw;
+  }
+
+  100% {
+    left: -10vw;
+  }
+}
+
+#game-platform {
+  width: 100%;
+  height: 10vw;
+  position: absolute;
+  bottom: 1vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom: #969696c4 2px solid;
+}
+#score {
+  width: 100%;
+  height: 6vw;
+  padding: 2vw;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  #game-platform {
+    width: 100%;
+    height: 10vw;
+    position: absolute;
+    bottom: 30vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-bottom: #969696c4 2px solid;
+  }
+  #score {
+    width: 100%;
+    height: 20vw;
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+}
